@@ -183,6 +183,7 @@ scaled_val_y = scaler_y.fit_transform(dal_val_y)
 last_x_vals = dal_val_x[-1:]
 next_x_vals = last_x_vals.copy()
 # print("DAL nextx: ", next_x_vals)
+print(config.keys())
 updated_next_x_vals = update_next_x_vals(next_x_vals, config, config.keys())
 
 dal_y_val, dal_growth = predict_next_value(dal_model_hy_cnn, updated_next_x_vals, dal_base)
