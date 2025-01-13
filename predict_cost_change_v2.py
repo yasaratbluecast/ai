@@ -160,50 +160,50 @@ def predict_next_value(model_hy_cnn, next_x_vals, base):
 
     return np.round(res_y,2), y_growth_pct
 
-atl_val_y = atl_data[[target_column]].values
-atl_val_x = atl_data.drop(target_column, axis=1).values
-# Scale the data
-scaled_val_x = scaler_x.fit_transform(atl_val_x)
-scaled_val_y = scaler_y.fit_transform(atl_val_y)
-last_x_vals = atl_val_x[-1:]
-next_x_vals = last_x_vals.copy()
-# print("ATL nextx: ", next_x_vals)
-updated_next_x_vals = update_next_x_vals(next_x_vals, config, config.keys())
+# atl_val_y = atl_data[[target_column]].values
+# atl_val_x = atl_data.drop(target_column, axis=1).values
+# # Scale the data
+# scaled_val_x = scaler_x.fit_transform(atl_val_x)
+# scaled_val_y = scaler_y.fit_transform(atl_val_y)
+# last_x_vals = atl_val_x[-1:]
+# next_x_vals = last_x_vals.copy()
+# # print("ATL nextx: ", next_x_vals)
+# updated_next_x_vals = update_next_x_vals(next_x_vals, config, config.keys())
 
-atl_y_val, atl_growth = predict_next_value(atl_model_hy_cnn, updated_next_x_vals, atl_base)
-# Display the predicted response variable
-print(f"Atlanta --> Response variable value for the given changes in the Predictor values:{np.round(atl_y_val,2)} with base value:{np.round(atl_base,2)}" )
-print(f"Atlanta --> Change in Response variable from the base line: {atl_growth}%")
+# atl_y_val, atl_growth = predict_next_value(atl_model_hy_cnn, updated_next_x_vals, atl_base)
+# # Display the predicted response variable
+# print(f"Atlanta --> Response variable value for the given changes in the Predictor values:{np.round(atl_y_val,2)} with base value:{np.round(atl_base,2)}" )
+# print(f"Atlanta --> Change in Response variable from the base line: {atl_growth}%")
 
-dal_val_y = dal_data[[target_column]].values
-dal_val_x = dal_data.drop(target_column, axis=1).values
-# Scale the data
-scaled_val_x = scaler_x.fit_transform(dal_val_x)
-scaled_val_y = scaler_y.fit_transform(dal_val_y)
-last_x_vals = dal_val_x[-1:]
-next_x_vals = last_x_vals.copy()
-# print("DAL nextx: ", next_x_vals)
-print(config.keys())
-updated_next_x_vals = update_next_x_vals(next_x_vals, config, config.keys())
+# dal_val_y = dal_data[[target_column]].values
+# dal_val_x = dal_data.drop(target_column, axis=1).values
+# # Scale the data
+# scaled_val_x = scaler_x.fit_transform(dal_val_x)
+# scaled_val_y = scaler_y.fit_transform(dal_val_y)
+# last_x_vals = dal_val_x[-1:]
+# next_x_vals = last_x_vals.copy()
+# # print("DAL nextx: ", next_x_vals)
+# print(config.keys())
+# updated_next_x_vals = update_next_x_vals(next_x_vals, config, config.keys())
 
-dal_y_val, dal_growth = predict_next_value(dal_model_hy_cnn, updated_next_x_vals, dal_base)
-# Display the predicted response variable
-print(f"Dallas --> Response variable value for the given changes in the Predictor values:{np.round(dal_y_val,2)} with base value:{np.round(dal_base,2)}" )
-print(f"Dallas --> Change in Response variable from the base line: {dal_growth}%")
+# dal_y_val, dal_growth = predict_next_value(dal_model_hy_cnn, updated_next_x_vals, dal_base)
+# # Display the predicted response variable
+# print(f"Dallas --> Response variable value for the given changes in the Predictor values:{np.round(dal_y_val,2)} with base value:{np.round(dal_base,2)}" )
+# print(f"Dallas --> Change in Response variable from the base line: {dal_growth}%")
 
 
-lax_val_y = lax_data[[target_column]].values
-lax_val_x = lax_data.drop(target_column, axis=1).values
-# Scale the data
-scaled_val_x = scaler_x.fit_transform(lax_val_x)
-scaled_val_y = scaler_y.fit_transform(lax_val_y)
-last_x_vals = lax_val_x[-1:]
-next_x_vals = last_x_vals.copy()
-# print("LAX nextx: ", next_x_vals)
+# lax_val_y = lax_data[[target_column]].values
+# lax_val_x = lax_data.drop(target_column, axis=1).values
+# # Scale the data
+# scaled_val_x = scaler_x.fit_transform(lax_val_x)
+# scaled_val_y = scaler_y.fit_transform(lax_val_y)
+# last_x_vals = lax_val_x[-1:]
+# next_x_vals = last_x_vals.copy()
+# # print("LAX nextx: ", next_x_vals)
 
-updated_next_x_vals = update_next_x_vals(next_x_vals, config, config.keys())
+# updated_next_x_vals = update_next_x_vals(next_x_vals, config, config.keys())
 
-lax_y_val, lax_growth = predict_next_value(lax_model_hy_cnn, updated_next_x_vals, lax_base)
-# Display the predicted response variable
-print(f"Los Angeles --> Response variable value for the given changes in the Predictor values:{np.round(lax_y_val,2)} with base value:{np.round(lax_base,2)}" )
-print(f"Los Angeles --> Change in Response variable from the base line: {lax_growth}%")
+# lax_y_val, lax_growth = predict_next_value(lax_model_hy_cnn, updated_next_x_vals, lax_base)
+# # Display the predicted response variable
+# print(f"Los Angeles --> Response variable value for the given changes in the Predictor values:{np.round(lax_y_val,2)} with base value:{np.round(lax_base,2)}" )
+# print(f"Los Angeles --> Change in Response variable from the base line: {lax_growth}%")
